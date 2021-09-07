@@ -1,0 +1,2290 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="./images/favicon.ico"><meta name="description" content=""><meta name="keywords" content=""><link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"><!-- <link rel="stylesheet" href="./css/libs.min.css"> --><link rel="stylesheet" href="./css/style.min.css"><title>guideline</title></head><body><header class="header fixed-top"><div class="grid"><div class="row"><div class="col-lg-24 col-xs-14"><div id="lmm-menu"><lmm-menu :glossary="glossary" :materials="materials" :menu-items="menuItems" :show-content="true" :show-glossary="true" :show-materials="true"></lmm-menu></div></div></div></div><div class="grid grid-header"><div class="header__top"><div class="row align-items-center justify-content-between"><!-- logo & text --><div class="d-flex justify-content-between align-items-center flex-grow"><a href="javascript:void(0);" class="header__link"><p class="header__course-name">Колесный погрузчик.<br>Периодическое техническое обслуживание</p></a><!-- nav --><div class="main-control"><div class="control-bar"><div id="playBtn" class="play"></div><div class="timer">0:00</div><div class="progress-bar"><div id="progress" class="progress-line"></div></div><div class="end">0:00</div></div></div><div class="header-icon-menu"><sapn class="header-icon-menu__item"></sapn><sapn class="header-icon-menu__item"></sapn><sapn class="header-icon-menu__item"></sapn></div></div></div></div><div class="header__wrapper"><div class="header__wrapper-main"><div class="header__wrapper-progress"></div></div></div></div></header><div class="fader"><div class="nav"><div class="nav__main"><div class="nav__main--list"><div class="nav__main--item"><div class="nav__main--item_label">Компоненты</div><div class="nav__sub"><div class="nav__sub--list"><div class="nav__sub--item"><a href="#grid_full">Grid (Concept full)</a></div><div class="nav__sub--item"><a href="#buttons">Кнопки</a></div><div class="nav__sub--item"><a href="#divider">Элемент разделитель</a></div><div class="nav__sub--item"><a href="#context-block">Элемент контекстного блока</a></div><div class="nav__sub--item"><a href="#lists">Списки</a></div><div class="nav__sub--item"><a href="#title">Заголовки</a></div><div class="nav__sub--item"><a href="#text">Текста</a></div><div class="nav__sub--item"><a href="#margins">Отступы</a></div><div class="nav__sub--item"><a href="#highlighters">Подсветка</a></div><div class="nav__sub--item"><a href="#gallery">Галерея</a></div><div class="nav__sub--item"><a href="#panel">Плитка</a></div><div class="nav__sub--item"><a href="#audio">Аудио</a></div><div class="nav__sub--item"><a href="#table">Таблица</a></div></div></div></div></div></div></div></div><main class="main mt-blue mb-blue"><!-- modal --><div class="grid mb-cyan mt-yellow"><div class="row" id="modal"><div class="col col-23"><h1 class="h1">Модальные окна</h1></div></div></div><div class="grid mb-yellow"><script>document.addEventListener("DOMContentLoaded", function (event) {
+					document.querySelector('.about').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.about').classList.add('show');
+					});
+
+					document.querySelector('.overlay.about').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.about').classList.remove('show');
+					});
+
+					document.querySelector('.task').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.task').classList.add('show');
+						document.querySelector('.modal.task').classList.add('show');
+					});
+
+					document.querySelector('.overlay.task').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.task').classList.remove('show');
+						document.querySelector('.modal.task').classList.remove('show');
+					});
+
+					document.querySelector('.correct').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.correct').classList.add('show');
+						document.querySelector('.modal.correct').classList.add('show');
+					});
+
+					document.querySelector('.overlay.correct').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.correct').classList.remove('show');
+						document.querySelector('.modal.correct').classList.remove('show');
+					});
+
+					document.querySelector('.incorrect').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.incorrect').classList.add('show');
+						document.querySelector('.modal.incorrect').classList.add('show');
+					});
+
+					document.querySelector('.overlay.incorrect').addEventListener("click", function () {
+						document.body.style.overflow = "";
+						document.querySelector('.overlay.incorrect').classList.remove('show');
+						document.querySelector('.modal.incorrect').classList.remove('show');
+					});
+				});</script><div class="row mb-yellow"><div class="col-7"><button class="btn btn__primary large task">Модалка Задание</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__primary large correct">Модалка Правильно</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__primary large incorrect">Модалка Неправильно</button></div></div><div class="row"><div class="col-7"><button class="btn btn__primary large about">Модалка О курсе</button></div><div class="col-1"></div><div class="col-7"></div><div class="col-1"></div><div class="col-7"></div></div></div><div class="overlay overlay--balck about" id="about"><div class="modal wrapper about"><div class="modal wrapper--close"></div><div class="modal__main"><div class="modal__main--list text-black"><div class="modal__main--item"><h4 class="h4">О курсе</h4><div class="text__l mt-yellow">Курс посвящен проведению периодического технического обслуживания колесного погрузчика. После успешного завершения курса вы сможете проводить техническое обслуживание колесного погрузчика под наблюдением.</div><div class="text__l mt-magenta">Предварительное требование: наличие основных знаний о проведении технического обслуживания техники.</div></div></div></div></div></div><div class="overlay task" id="task"><div class="modal task"><div class="modal__main"><div class="modal__main--list bg-darkBlue"><div class="modal__main--item"><h1 class="h1">Задание</h1><div class="text__l text-white mt-yellow">Вам предстоит выполнить интерактивное задание, посвященное одному из рассмотренных аспектов обслуживания машины.<br><br>После успешного выполнения вы сможете перейти дальше.</div><div class="btn btn__secondary large btn__block mt-green">Продолжить</div></div></div></div></div></div><div class="overlay correct" id="correct"><div class="modal correct"><div class="modal__main"><div class="modal__main--list bg-darkBlue"><div class="modal__main--item"><h1 class="h1">Правильно!</h1><div class="btn btn__secondary large btn__block mt-green">Продолжить</div></div></div></div></div></div><div class="overlay incorrect" id="incorrect"><div class="modal incorrect"><div class="modal__main"><div class="modal__main--list"><div class="modal__main--item"><h1 class="h1">Неправильно</h1><div class="btn btn__secondary large btn__block mt-green">Попробовать снова</div><div class="btn btn__light btn__light--icon medium mt-magenta"><span>Повторить материал</span></div></div></div></div></div></div><!-- grid full --><div class="grid mb-cyan"><div class="row" id="grid_full"><div class="col col-23"><h1 class="h1">Grid (Concept full)</h1></div></div></div><div class="grid grids mb-yellow"><!-- 1 блок 23к --><div class="row text-center mb-magenta"><div class="col col-23"><p class="text text__l">920px 23к</p></div></div><!-- 2 блока --><div class="row text-center mb-magenta"><div class="col col-11"><p class="text text__l">440px 11к</p></div><div class="col-1"></div><div class="col col-11"><p class="text text__l">440px 11к</p></div></div><!-- 3 блока --><div class="row text-center mb-magenta"><div class="col col-7"><p class="text text__l">280px 7к</p></div><div class="col-1"></div><div class="col col-7"><p class="text text__l">280px 7к</p></div><div class="col-1"></div><div class="col col-7"><p class="text text__l">280px 7к</p></div></div><!-- 4 блока --><div class="row text-center mb-magenta"><div class="col col-5"><p class="text text__l">280px 5к</p></div><div class="col-1"></div><div class="col col-5"><p class="text text__l">280px 5к</p></div><div class="col-1"></div><div class="col col-5"><p class="text text__l">280px 5к</p></div><div class="col-1"></div><div class="col col-5"><p class="text text__l">280px 5к</p></div></div></div><div class="grid mb-blue"><div class="row"><div class="col-11 mb-xs-25"><textarea class="site site__textarea" disabled="disabled">
+<div class="grid grids mb-yellow">
+	<!-- 1 блок 23к -->
+	<div class="row text-center mb-magenta">
+		<div class="col col-23">
+			<p class="text text__l">920px 23к</p>
+		</div>
+
+	</div>
+	<!-- 2 блока -->
+	<div class="row text-center mb-magenta">
+		<div class="col col-11">
+			<p class="text text__l">440px 11к</p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-11">
+			<p class="text text__l">440px 11к</p>
+		</div>
+	</div>
+	<!-- 3 блока -->
+	<div class="row text-center mb-magenta">
+		<div class="col col-7">
+			<p class="text text__l">280px 7к</p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-7">
+			<p class="text text__l">280px 7к</p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-7">
+			<p class="text text__l">280px 7к</p>
+		</div>
+	</div>
+	<!-- 4 блока -->
+	<div class="row text-center mb-magenta">
+		<div class="col col-5">
+			<p class="text text__l">280px 5к </p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-5">
+			<p class="text text__l">280px 5к </p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-5">
+			<p class="text text__l">280px 5к </p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col col-5">
+			<p class="text text__l">280px 5к </p>
+		</div>
+	</div>
+</div>
+				</textarea></div><div class="col-11 col-offset-1"><pre class="code">
+					<code class="language-css">
+.col {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+					flex-grow: 1;
+	-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+	max-width: 100%;
+	padding: 0 10px;
+}
+
+@media screen and (max-width: 719px) {
+	.col {
+		padding: 0 3.5px;
+	}
+}
+
+.col.reverse {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+			-ms-flex-direction: column-reverse;
+					flex-direction: column-reverse;
+}
+
+.first {
+	-webkit-box-ordinal-group: 0;
+			-ms-flex-order: -1;
+					order: -1;
+}
+
+.last {
+	-webkit-box-ordinal-group: 2;
+			-ms-flex-order: 1;
+					order: 1;
+}
+
+.align-start {
+	-ms-flex-item-align: start;
+			align-self: flex-start;
+}
+
+.align-end {
+	-ms-flex-item-align: end;
+			align-self: flex-end;
+}
+
+.align-center {
+	-ms-flex-item-align: center;
+			align-self: center;
+}
+
+.align-baseline {
+	-ms-flex-item-align: baseline;
+			align-self: baseline;
+}
+
+.align-stretch {
+	-ms-flex-item-align: stretch;
+			align-self: stretch;
+}
+
+.flex-grow {
+	-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+					flex-grow: 1;
+}
+
+.col-1 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 4%;
+			flex-basis: 4%;
+	max-width: 4%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-1 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-1 {
+	margin-left: 4%;
+}
+
+.col-2 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 8%;
+			flex-basis: 8%;
+	max-width: 8%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-2 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-2 {
+	margin-left: 8%;
+}
+
+.col-3 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 12%;
+			flex-basis: 12%;
+	max-width: 12%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-3 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-3 {
+	margin-left: 12%;
+}
+
+.col-4 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 16%;
+			flex-basis: 16%;
+	max-width: 16%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-4 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-4 {
+	margin-left: 16%;
+}
+
+.col-5 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 20%;
+			flex-basis: 20%;
+	max-width: 20%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-5 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-5 {
+	margin-left: 20%;
+}
+
+.col-6 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 24%;
+			flex-basis: 24%;
+	max-width: 24%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-6 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-6 {
+	margin-left: 24%;
+}
+
+.col-7 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 28%;
+			flex-basis: 28%;
+	max-width: 28%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-7 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-7 {
+	margin-left: 28%;
+}
+
+.col-8 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 32%;
+			flex-basis: 32%;
+	max-width: 32%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-8 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-8 {
+	margin-left: 32%;
+}
+
+.col-9 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 36%;
+			flex-basis: 36%;
+	max-width: 36%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-9 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-9 {
+	margin-left: 36%;
+}
+
+.col-10 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 40%;
+			flex-basis: 40%;
+	max-width: 40%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-10 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-10 {
+	margin-left: 40%;
+}
+
+.col-11 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 44%;
+			flex-basis: 44%;
+	max-width: 44%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-11 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-11 {
+	margin-left: 44%;
+}
+
+.col-12 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 48%;
+			flex-basis: 48%;
+	max-width: 48%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-12 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-12 {
+	margin-left: 48%;
+}
+
+.col-13 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 52%;
+			flex-basis: 52%;
+	max-width: 52%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-13 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-13 {
+	margin-left: 52%;
+}
+
+.col-14 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 56%;
+			flex-basis: 56%;
+	max-width: 56%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-14 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-14 {
+	margin-left: 56%;
+}
+
+.col-15 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 60%;
+			flex-basis: 60%;
+	max-width: 60%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-15 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-15 {
+	margin-left: 60%;
+}
+
+.col-16 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 64%;
+			flex-basis: 64%;
+	max-width: 64%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-16 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-16 {
+	margin-left: 64%;
+}
+
+.col-17 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 68%;
+			flex-basis: 68%;
+	max-width: 68%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-17 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-17 {
+	margin-left: 68%;
+}
+
+.col-18 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 72%;
+			flex-basis: 72%;
+	max-width: 72%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-18 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-18 {
+	margin-left: 72%;
+}
+
+.col-19 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 76%;
+			flex-basis: 76%;
+	max-width: 76%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-19 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-19 {
+	margin-left: 76%;
+}
+
+.col-20 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 80%;
+			flex-basis: 80%;
+	max-width: 80%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-20 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-20 {
+	margin-left: 80%;
+}
+
+.col-21 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 84%;
+			flex-basis: 84%;
+	max-width: 84%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-21 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-21 {
+	margin-left: 84%;
+}
+
+.col-22 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 88%;
+			flex-basis: 88%;
+	max-width: 88%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-22 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-22 {
+	margin-left: 88%;
+}
+
+.col-23 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 92%;
+			flex-basis: 92%;
+	max-width: 92%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-23 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-23 {
+	margin-left: 92%;
+}
+
+.col-24 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 96%;
+			flex-basis: 96%;
+	max-width: 96%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-24 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-24 {
+	margin-left: 96%;
+}
+
+.col-23 {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	-ms-flex-preferred-size: 100%;
+			flex-basis: 100%;
+	max-width: 100%;
+	padding: 0;
+}
+
+@media screen and (max-width: 719px) {
+	.col-23 {
+		padding: 0 3.5px;
+	}
+}
+
+.col-offset-25 {
+	margin-left: 100%;
+}
+					</code>
+				</pre></div></div></div><!-- buttons --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="buttons"><div class="col-23"><h1 class="h1">Кнопки</h1></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h4 text-center">Синие</h5></div></div><div class="row mb-yellow"><div class="col-7"><h5 class="h5 text-right">Мобильные</h5></div><div class="col-1"></div><div class="col-7"><h5 class="h5 text-center">Планшет, десктоп</h5></div><div class="col-1"></div><div class="col-7"><h5 class="h5">Отключена</h5></div></div><div class="row mb-yellow"><div class="col-7 text-right"><button class="btn btn__primary medium">Средний</button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__primary large">Большой</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__primary disabled large">Отключена</button></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h4 text-center">Белые</h5></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block bg-darkBlue"><div class="context-block__content"><div class="row"><div class="col-7 text-right"><button class="btn btn__secondary medium">Средний</button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__secondary large">Большой</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__secondary disabled large">Отключена</button></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h5 text-center">Второстепенные кнопки</h5></div></div><div class="row mb-yellow"><div class="col-7 text-right"><button class="btn btn__primary small">Маленький</button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__primary medium">Средний</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__primary disabled large">Отключена</button></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block bg-darkBlue"><div class="context-block__content"><div class="row"><div class="col-7 text-right"><button class="btn btn__secondary small">Маленький</button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__secondary medium">Средний</button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__secondary disabled large">Отключена</button></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block"><div class="context-block__content"><div class="row"><div class="col-7 text-right"><button class="btn btn__back"></button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__back disabled"></button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__secondary medium btn__secondary--icon"><span>Продолжить</span></button></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h5 text-center">Прозрачные кнопки</h5></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block bg-black"><div class="context-block__content"><div class="row"><div class="col-7 text-right"><button class="btn btn__light btn__light--icon small"><span>Маленький</span></button></div><div class="col-1"></div><div class="col-7 text-center"><button class="btn btn__light btn__light--icon medium"><span>Средний</span></button></div><div class="col-1"></div><div class="col-7"><button class="btn btn__light btn__light--icon disabled large"><span>Отключена</span></button></div></div></div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<button class="btn btn__primary large">Большой</button>
+<button class="btn btn__primary medium">Средний</button>
+<button class="btn btn__primary small">Маленький</button>
+<button class="btn btn__secondary large">Большой</button>
+<button class="btn btn__secondary medium">Средний</button>
+<button class="btn btn__secondary small">Маленький</button>
+<button class="btn btn__secondary medium btn__secondary--icon"><span>Продолжить</span></button>
+<button class="btn btn__back"></button>
+<button class="btn btn__light btn__light--icon large"><span>Средний</span></button>
+<button class="btn btn__light btn__light--icon medium"><span>Средний</span></button>
+<button class="btn btn__light btn__light--icon small"><span>Маленький</span></button>
+					</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+					<code class="language-css">
+.btn {
+	font-family: "Montserrat-Medium", sans-serif;
+}
+
+.btn__primary:not(:disabled):not(.disabled), .btn__secondary:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.btn__primary, .btn__primary:visited, .btn__primary:focus, .btn__primary:active, .btn__secondary, .btn__secondary:visited, .btn__secondary:focus, .btn__secondary:active {
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: background 400ms;
+	-o-transition: background 400ms;
+	transition: background 400ms;
+	display: inline-block;
+	width: auto;
+	border-radius: 50px;
+	white-space: nowrap;
+	vertical-align: middle;
+	outline: none;
+	text-decoration: none;
+}
+
+.btn__primary.large, .btn__primary:visited.large, .btn__primary:focus.large, .btn__primary:active.large, .btn__secondary.large, .btn__secondary:visited.large, .btn__secondary:focus.large, .btn__secondary:active.large {
+	padding: 27px 50px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+@media only screen and (max-width: 719px) {
+	.btn__primary.large, .btn__primary:visited.large, .btn__primary:focus.large, .btn__primary:active.large, .btn__secondary.large, .btn__secondary:visited.large, .btn__secondary:focus.large, .btn__secondary:active.large {
+		padding: 12px 22px;
+		font-size: 18px !important;
+		line-height: 24px !important;
+	}
+}
+
+.btn__primary.medium, .btn__primary:visited.medium, .btn__primary:focus.medium, .btn__primary:active.medium, .btn__secondary.medium, .btn__secondary:visited.medium, .btn__secondary:focus.medium, .btn__secondary:active.medium {
+	padding: 20px 35px;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+.btn__primary.small, .btn__primary:visited.small, .btn__primary:focus.small, .btn__primary:active.small, .btn__secondary.small, .btn__secondary:visited.small, .btn__secondary:focus.small, .btn__secondary:active.small {
+	padding: 7px 20px;
+	font-size: 12px !important;
+	line-height: 17px !important;
+}
+
+.btn__primary.fill, .btn__primary:visited.fill, .btn__primary:focus.fill, .btn__primary:active.fill, .btn__secondary.fill, .btn__secondary:visited.fill, .btn__secondary:focus.fill, .btn__secondary:active.fill {
+	width: 100%;
+}
+
+.btn__primary, .btn__primary:visited, .btn__primary:focus, .btn__primary:active {
+	background: #0e1271;
+	color: white;
+	border: none;
+}
+
+.btn__primary:hover {
+	text-decoration: none;
+	background: transparent;
+	background-color: rgba(14, 18, 113, 0.8);
+	color: white;
+}
+
+.btn__secondary, .btn__secondary:visited, .btn__secondary:focus, .btn__secondary:active {
+	border: 1px solid #e7e7f1;
+	background: white;
+	color: #0e1271;
+}
+
+.btn__secondary:hover {
+	text-decoration: none;
+	background-color: #e6e6e6;
+	border-color: #0e1271;
+}
+
+.btn__default:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.btn__default, .btn__default:visited, .btn__default:focus, .btn__default:active {
+	display: inline-block;
+	width: auto;
+	border: none;
+	white-space: nowrap;
+	vertical-align: middle;
+	outline: none;
+	background: white;
+	border: 1px solid transparent;
+	color: #c4c4c4;
+	border-color: #c4c4c4;
+}
+
+.btn__default.large, .btn__default:visited.large, .btn__default:focus.large, .btn__default:active.large {
+	padding: 28px 40px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+@media only screen and (max-width: 719px) {
+	.btn__default.large, .btn__default:visited.large, .btn__default:focus.large, .btn__default:active.large {
+		padding: 12px 22px;
+		font-size: 12px !important;
+		line-height: 17px !important;
+	}
+}
+
+.btn__default.medium, .btn__default:visited.medium, .btn__default:focus.medium, .btn__default:active.medium {
+	padding: 20px 35px;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+.btn__default.small, .btn__default:visited.small, .btn__default:focus.small, .btn__default:active.small {
+	padding: 12px 22px;
+	font-size: 12px !important;
+	line-height: 17px !important;
+}
+
+.btn__default:hover {
+	text-decoration: none;
+	background: transparent;
+	border-color: #d70e2a;
+	color: #d70e2a;
+}
+
+.btn__outline:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.btn__outline, .btn__outline:visited, .btn__outline:focus, .btn__outline:active {
+	display: inline-block;
+	width: auto;
+	white-space: nowrap;
+	vertical-align: middle;
+	outline: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	color: #d70e2a;
+	border-color: #d70e2a;
+}
+
+.btn__outline.large, .btn__outline:visited.large, .btn__outline:focus.large, .btn__outline:active.large {
+	padding: 28px 40px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+@media only screen and (max-width: 719px) {
+	.btn__outline.large, .btn__outline:visited.large, .btn__outline:focus.large, .btn__outline:active.large {
+		padding: 12px 22px;
+		font-size: 12px !important;
+		line-height: 17px !important;
+	}
+}
+
+.btn__outline.medium, .btn__outline:visited.medium, .btn__outline:focus.medium, .btn__outline:active.medium {
+	padding: 20px 35px;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+.btn__outline.small, .btn__outline:visited.small, .btn__outline:focus.small, .btn__outline:active.small {
+	padding: 12px 22px;
+	font-size: 12px !important;
+	line-height: 17px !important;
+}
+
+.btn__outline:hover {
+	text-decoration: none;
+	border-color: #d70e2a;
+	background-color: #d70e2a;
+	color: white;
+}
+
+.btn__dashed:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.btn__dashed, .btn__dashed:visited, .btn__dashed:focus, .btn__dashed:active {
+	display: inline-block;
+	width: auto;
+	white-space: nowrap;
+	vertical-align: middle;
+	outline: none;
+	background-color: transparent;
+	border: 1px dashed transparent;
+	color: #c4c4c4;
+	border-color: #c4c4c4;
+}
+
+.btn__dashed.xxl, .btn__dashed:visited.xxl, .btn__dashed:focus.xxl, .btn__dashed:active.xxl {
+	padding: 30px 50px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+.btn__dashed.xl, .btn__dashed:visited.xl, .btn__dashed:focus.xl, .btn__dashed:active.xl {
+	padding: 20px 40px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+.btn__dashed.l, .btn__dashed:visited.l, .btn__dashed:focus.l, .btn__dashed:active.l {
+	padding: 15px 30px;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+.btn__dashed.m, .btn__dashed:visited.m, .btn__dashed:focus.m, .btn__dashed:active.m {
+	padding: 10px 25px;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+.btn__dashed.s, .btn__dashed:visited.s, .btn__dashed:focus.s, .btn__dashed:active.s {
+	padding: 7px 20px;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+.btn__dashed.xs, .btn__dashed:visited.xs, .btn__dashed:focus.xs, .btn__dashed:active.xs {
+	padding: 5px 15px;
+	font-size: 12px !important;
+	line-height: 17px !important;
+}
+
+.btn__dashed:hover {
+	text-decoration: none;
+	color: #d70e2a;
+	border-color: #d70e2a;
+}
+
+.btn__circle {
+	border-radius: 50%;
+}
+
+.btn__round {
+	border-radius: 40px;
+}
+
+.btn__block {
+	display: block;
+	width: 100%;
+}
+
+.btn__center {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.btn > i,
+.btn > span {
+	display: inline-block;
+	pointer-events: none;
+}
+
+.btn > .icon + span {
+	margin-left: 8px;
+}
+
+.btn.disabled {
+	color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.75);
+	border-color: rgba(0, 0, 0, 0.75);
+	text-shadow: none;
+	-webkit-box-shadow: none;
+					box-shadow: none;
+	opacity: 1;
+}
+
+.btn.disabled.btn__primary {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn.disabled.btn__secondary {
+	color: #e7e7f1;
+	background-color: white;
+	border-color: #e7e7f1;
+}
+
+.btn.btn__circle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+			-ms-flex-pack: center;
+					justify-content: center;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	width: 40px;
+	height: 40px;
+	background: white;
+	border: 1px solid #d70e2a;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-right: -40px;
+}
+
+.btn.btn__circle:hover {
+	border: 1px solid rgba(215, 14, 42, 0.75);
+}
+					</code>
+				</pre></div></div></div><!-- divider --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="divider"><div class="col-23"><h1 class="h1">Элемент разделитель со списком</h1></div></div><div class="row mb-yellow"><div class="col-7"><div class="divider"><div class="divider__circle-orange">1</div><div class="divider__line"></div><div class="text text__l text-bold mb-pink">Общие требования</div><ul class="list__ul text text__l"><li class="list__ul-dash">Перечень технологических процессов, видов работ и операций, на которые распространяется инструкция.</li><li class="list__ul-dash">Характеристика опасных и вредных производственных факторов, условия допуска к работе.</li><li class="list__ul-dash">Правила личной гигиены.</li><li class="list__ul-dash">Порядок информирования о нарушении охраны труда.</li><li class="list__ul-dash">Меры первой помощи.</li></ul></div></div><div class="col-1"></div><div class="col-7"><div class="divider"><div class="divider__line--cross"></div><div class="text text__l text-bold mb-pink">Всеобщая декларация прав человека</div><ul class="list__ul text text__l"><li class="list__ul-dash">Перечень технологических процессов, видов работ и операций, на которые распространяется инструкция.</li><li class="list__ul-dash">Характеристика опасных и вредных производственных факторов, условия допуска к работе.</li><li class="list__ul-dash">Правила личной гигиены.</li><li class="list__ul-dash">Порядок информирования о нарушении охраны труда.</li><li class="list__ul-dash">Меры первой помощи.</li></ul></div></div><div class="col-1"></div><div class="col-7"><div class="divider"><div class="divider__line--item"></div><div class="text text__l text-bold mb-pink" mb-pink>Всеобщая декларация прав человека</div><ul class="list__ul text text__l"><li class="list__ul-dash">Перечень технологических процессов, видов работ и операций, на которые распространяется инструкция.</li><li class="list__ul-dash">Характеристика опасных и вредных производственных факторов, условия допуска к работе.</li><li class="list__ul-dash">Правила личной гигиены.</li><li class="list__ul-dash">Порядок информирования о нарушении охраны труда.</li><li class="list__ul-dash">Меры первой помощи.</li></ul></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="divider"><div class="divider__line--item"></div><div class="text text__l text-bold">Всеобщая декларация прав человека</div><div class="text text__l">При их обнаружении замените патрон новым и установите его в соответствии с пунктами 3 - 9.</div></div></div></div><div class="row mb-yellow"><div class="col-11"><div class="divider"><div class="divider__circle-blue">2</div><div class="divider__line"></div><div class="text text__l">При их обнаружении замените патрон новым и установите его в соответствии с пунктами 3 - 9.</div></div></div><div class="col-1"></div><div class="col-11"><div class="divider"><div class="divider__line--cross"></div><div class="text text__l">При их обнаружении замените патрон новым и установите его в соответствии с пунктами 3 - 9.</div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="divider">
+	<div class="divider__circle-orange">
+		1
+	</div>
+	<div class="divider__line"></div>
+	<div class="text text__l text-bold mb-pink">Общие требования</div>
+	<ul class="list__ul text text__l">
+		<li class="list__ul-dash">
+			Перечень технологических процессов, видов работ и операций, на
+			которые распространяется инструкция.
+		</li>
+		<li class="list__ul-dash">
+			Характеристика опасных и вредных производственных факторов,
+			условия допуска к работе.
+		</li>
+		<li class="list__ul-dash">Правила личной гигиены.</li>
+		<li class="list__ul-dash">
+			Порядок информирования о нарушении охраны труда.
+		</li>
+		<li class="list__ul-dash">Меры первой помощи.</li>
+	</ul>
+</div>
+
+<div class="divider">
+	<div class="divider__img-rounded">
+		<img src="../images/icon1-1.png" alt="">
+	</div>
+	<div class="divider__line"></div>
+	<div class="text text__l text-bold">
+		Всеобщая декларация прав человека
+	</div>
+</div>
+
+<div class="divider">
+	<div class="divider__line--cross"></div>
+	<div class="text text__l text-bold mb-pink">
+		Всеобщая декларация прав человека
+	</div>
+	<ul class="list__ul text text__l">
+		<li class="list__ul-dash">
+			Перечень технологических процессов, видов работ и операций, на
+			которые распространяется инструкция.
+		</li>
+		<li class="list__ul-dash">
+			Характеристика опасных и вредных производственных факторов,
+			условия допуска к работе.
+		</li>
+		<li class="list__ul-dash">Правила личной гигиены.</li>
+		<li class="list__ul-dash">
+			Порядок информирования о нарушении охраны труда.
+		</li>
+		<li class="list__ul-dash">Меры первой помощи.</li>
+	</ul>
+</div>
+
+<div class="divider">
+	<div class="divider__line--item"></div>
+	<div class="text text__l text-bold mb-pink" mb-pink>
+		Всеобщая декларация прав человека
+	</div>
+	<ul class="list__ul text text__l">
+		<li class="list__ul-dash">
+			Перечень технологических процессов, видов работ и операций, на
+			которые распространяется инструкция.
+		</li>
+		<li class="list__ul-dash">
+			Характеристика опасных и вредных производственных факторов,
+			условия допуска к работе.
+		</li>
+		<li class="list__ul-dash">Правила личной гигиены.</li>
+		<li class="list__ul-dash">
+			Порядок информирования о нарушении охраны труда.
+		</li>
+		<li class="list__ul-dash">Меры первой помощи.</li>
+	</ul>
+</div>
+
+<div class="divider divider__row-wrap">
+	<div class="divider__img-rounded">
+		<img src="../images/icon1-1.png" alt="">
+	</div>
+	<div class="text text__l">
+		Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note
+	</div>
+</div>
+				</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+					<code class="language-css">
+.divider__img-rounded {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	background: 0 0;
+	border-radius: 50%;
+	margin: 0 auto
+}
+
+.divider__circle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 33px;
+	height: 33px;
+	max-width: 33px;
+	max-height: 33px;
+	background: #d70e2a;
+	color: #fff;
+	font-size: 14px !important;
+	line-height: 21px !important;
+	border-radius: 50%;
+	margin: 0 auto
+}
+
+.divider__line {
+	height: 1px;
+	background: rgba(0, 0, 0, .1);
+	margin: 20px 0
+}
+
+.divider__line--item {
+	margin: 0 0 20px;
+	color: #000;
+	border-top-width: 1px;
+	border-top-style: solid;
+	-o-border-image: -o-linear-gradient(right, rgba(0, 0, 0, .1) 80%, #000 20%) 1 1;
+	border-image: -webkit-gradient(linear, right top, left top, color-stop(80%, rgba(0, 0, 0, .1)), color-stop(20%, #000)) 1 1;
+	border-image: linear-gradient(to left, rgba(0, 0, 0, .1) 80%, #000 20%) 1 1
+}
+
+.divider__row-wrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.divider__row-wrap .divider__img-rounded {
+	margin: 0 22px 0 0
+}
+					</code>
+				</pre></div></div></div><!-- context-block --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="context-block"><div class="col-23"><h1 class="h1">Элемент контекстного блока</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block"><div class="context-block__circle-section"><div class="circle"><div class="title">10</div><div class="text">минут</div></div></div><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.</div></div><div class="context-block__extra-section--small"><span class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note </span><button class="btn btn__primary fill small">Скачать</button></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block"><div class="context-block__content"><div class="context-block__title">Далеко-далеко за, словесными горами в стране гласных и согласных живут.</div><div class="context-block__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Одна раз алфавит рот знаках? Если, буквоград, что своего безорфографичный большого дал предупреждал жаренные продолжил, даже имени наш то имеет! Языкового обеспечивает, ведущими от всех над власти предупреждал рекламных последний коварных рыбного, путь но пор продолжил вершину маленький предупредила своего сбить, несколько заглавных? Имеет раз предупреждал пунктуация последний снова. Родного речью злых встретил, имеет вопроса курсивных рыбными рот своего прямо дороге живет вопрос если, коварный лучше диких что буквоград приставка от всех толку силуэт власти которой! Живет, повстречался меня языкового там маленький безорфографичный если злых пояс толку свое, грустный взгляд деревни раз?</div></div><div class="context-block__extra-section--small"><div class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note</div><button class="btn btn__primary fill small">Скачать</button></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="context-block"><div class="context-block__circle-section"><div class="circle"><div class="title">10</div><div class="text">минут</div></div></div><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру</div></div><div class="context-block__extra-section--small"><div class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note Далеко-далеко за словесными горами в стране гласных, и согласных живут рыбные тексты. Дороге последний всемогущая все скатился домах ты вскоре заманивший? Великий!</div><button class="btn btn__primary fill small">Скачать</button></div></div></div></div><div class="row mb-yellow"><div class="col-11"><div class="context-block"><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру</div></div><div class="context-block__extra-section"><div class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note</div><button class="btn btn__primary fill small">Скачать</button></div></div></div><div class="col-1"></div><div class="col-11"><div class="context-block"><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру</div></div></div></div></div><div class="row mb-yellow"><div class="col-7"><div class="context-block"><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру</div></div></div></div><div class="col-1"></div><div class="col-7"><div class="context-block"><div class="context-block__extra-section"><div class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note</div><button class="btn btn__primary fill small">Скачать</button></div></div></div><div class="col-1"></div><div class="col-7"><div class="context-block context-block--column"><div class="context-block__content"><div class="context-block__title">Короткий заголовок</div><div class="context-block__text">По результатам проверки заполненный Сервисный отчет должен быть направлен региональному сервис-менеджеру</div></div><div class="context-block__circle-section"><div class="circle"><div class="title">10</div><div class="text">минут</div></div></div><div class="context-block__extra-section"><div class="text text__s mb-magenta">Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note</div><button class="btn btn__primary fill small">Скачать</button></div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="context-block">
+	<div class="context-block__circle-section">
+		<div class="circle">
+			<div class="title">
+				10
+			</div>
+			<div class="text">
+				минут
+			</div>
+		</div>
+	</div>
+	<div class="context-block__content">
+		<div class="context-block__title">
+			Короткий заголовок
+		</div>
+		<div class="context-block__text">
+			По результатам проверки заполненный Сервисный отчет должен быть направлен региональному
+			сервис-менеджеру Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты.
+		</div>
+	</div>
+	<div class="context-block__extra-section--small">
+		<div class="text text__s mb-magenta">
+			Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note
+		</div>
+		<button class="btn btn__primary fill small">Скачать</button>
+	</div>
+</div>
+
+<div class="context-block context-block--column">
+
+	<div class="context-block__content">
+		<div class="context-block__title">
+			Короткий заголовок
+		</div>
+		<div class="context-block__text">
+			По результатам проверки заполненный Сервисный отчет должен быть направлен региональному
+			сервис-менеджеру
+		</div>
+	</div>
+	<div class="context-block__circle-section">
+		<div class="circle">
+			<div class="title">
+				10
+			</div>
+			<div class="text">
+				минут
+			</div>
+		</div>
+	</div>
+	<div class="context-block__extra-section">
+		<div class="text text__s mb-magenta">
+			Идеален для новых пользователей, которые хотят познакомиться с линейкой Galaxy Note
+		</div>
+		<button class="btn btn__secondary fill small">Скачать</button>
+	</div>
+
+</div>
+			</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+<code class="language-css">
+	.context-block {
+		background-color: #e7e7f1;
+		position: relative;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		font-family: "Montserrat-Regular", sans-serif;
+	}
+
+	.context-block .context-block__content {
+		width: 100%;
+		padding: 25px 15px;
+		word-wrap: anywhere;
+		-ms-flex-preferred-size: 100%;
+				flex-basis: 100%;
+		-ms-flex-negative: .5;
+				flex-shrink: .5;
+	}
+
+	.context-block__img {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		color: #005cfe;
+		fill: #005cfe;
+		height: auto;
+		-ms-flex-negative: 0;
+				flex-shrink: 0;
+		font-size: 3em;
+		margin: 0 0 0 15px;
+		padding: 25px 0;
+	}
+
+	.context-block__img.last {
+		margin: 0 15px 0 0;
+	}
+
+	.context-block__extra-section, .context-block__extra-section--small {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+				-ms-flex-flow: column;
+						flex-flow: column;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		padding: 25px 15px;
+	}
+
+	.context-block__circle-section {
+		padding: 25px 15px;
+	}
+
+	.context-block__circle-section .circle {
+		min-width: 120px;
+		min-height: 120px;
+		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+				-ms-flex-flow: column;
+						flex-flow: column;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		background-color: black;
+		color: white;
+		border-radius: 50%;
+	}
+
+	.context-block__circle-section .title {
+		font-size: 38px !important;
+		line-height: 40px !important;
+		font-family: "Montserrat-Bold", sans-serif;
+	}
+
+	.context-block__circle-section .text {
+		font-size: 16px !important;
+		line-height: 24px !important;
+		overflow: hidden;
+	}
+
+	.context-block__extra-section--small {
+		min-width: 200px;
+		max-width: 200px;
+	}
+
+	.context-block__title {
+		display: block;
+		font-family: "Montserrat-Bold", sans-serif;
+		margin-bottom: 10px;
+		font-size: 18px !important;
+		line-height: 27px !important;
+	}
+
+	.context-block__text {
+		font-size: 12px !important;
+		line-height: 17px !important;
+	}
+
+	.context-block--column {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+				-ms-flex-flow: column;
+						flex-flow: column;
+	}
+
+</code>
+</pre></div></div></div><!-- list --><div class="grid mb-blue"><div class="row mb-cyan" id="lists"><div class="col-23"><h1 class="h1">Списки</h1></div></div><div class="row mb-yellow"><div class="col-11"><ul class="list list__ul text text__l"><li class="list__ul--dash">Социально-экономические.</li><li class="list__ul--dash">Организационно-технические.</li><li class="list__ul--dash">Санитарно-гигиенические.</li></ul></div><div class="col-1"></div><div class="col-11"><ol class="list list__ol text text__l"><li class="list__ol--item">Социально-экономические.</li><li class="list__ol--item">Организационно-технические.</li><li class="list__ol--item">Санитарно-гигиенические.</li></ol></div></div><div class="row mb-yellow"><div class="col-7"><ol class="list list--orange list__circle text text__l"><li class="list__circle--item">Социально-экономические.</li><li class="list__circle--item">Организационно-технические.</li><li class="list__circle--item">Санитарно-гигиенические.</li></ol></div><div class="col-1"></div><div class="col-7"><ol class="list list--blue list__circle text text__l"><li class="list__circle--item">Социально-экономические.</li><li class="list__circle--item">Организационно-технические.</li><li class="list__circle--item">Санитарно-гигиенические.</li></ol></div><div class="col-1"></div><div class="col-7"><ol class="list list--orange_border list__circle text text__l"><li class="list__circle--item">Социально-экономические.</li><li class="list__circle--item">Организационно-технические.</li><li class="list__circle--item">Санитарно-гигиенические.</li></ol></div></div><div class="row mb-yellow"><div class="col-23"><div class="list list__num list--orange mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--title">Быть рядом и иметь доступ к машинам заказчика.</div><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--blue mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--title">Быть рядом и иметь доступ к машинам заказчика.</div><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--orange_border mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--title">Быть рядом и иметь доступ к машинам заказчика.</div><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--orange mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--blue mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--orange_border mb-yellow"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--subtitle">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><div class="list list__num list--orange mb-pink"><div class="list__num--item"><div class="list__num--item--text text__s">1</div></div><div class="list__num--titles"><div class="list__num--title">Быть рядом и иметь доступ к машинам заказчика.</div></div></div><ul class="list list__ul text text__m"><li class="list__ul--dash">Социально-экономические.</li><li class="list__ul--dash">Организационно-технические.</li><li class="list__ul--dash">Санитарно-гигиенические.</li></ul></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<ul class="list list__ul text text__l">
+	<li class="list__ul--dash">Социально-экономические.</li>
+	<li class="list__ul--dash">Организационно-технические.</li>
+	<li class="list__ul--dash">Санитарно-гигиенические.</li>
+</ul>
+
+<ol class="list list__ol text text__l">
+	<li class="list__ol--item">Социально-экономические.</li>
+	<li class="list__ol--item">Организационно-технические.</li>
+	<li class="list__ol--item">Санитарно-гигиенические.</li>
+</ol>
+
+<ol class="list list--orange list__circle text text__l">
+	<li class="list__circle--item">Социально-экономические.</li>
+	<li class="list__circle--item">Организационно-технические.</li>
+	<li class="list__circle--item">Санитарно-гигиенические.</li>
+</ol>
+
+<ol class="list list--orange_border list__circle text text__l">
+	<li class="list__circle--item">Социально-экономические.</li>
+	<li class="list__circle--item">Организационно-технические.</li>
+	<li class="list__circle--item">Санитарно-гигиенические.</li>
+</ol>
+				</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+					<code class="language-css">
+.list__default {
+	padding-left: 20px;
+}
+
+.list__ol {
+	counter-reset: li;
+	padding: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.list__ol--item {
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.list__ol--item:last-child {
+	margin-bottom: 0px;
+}
+
+.list__ol--item:before {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #ee8615;
+}
+
+.list__ul {
+	padding: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.list__ul--item {
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 30px;
+}
+
+.list__ul--item:last-child {
+	margin-bottom: 0px;
+}
+
+.list__ul--item:before {
+	content: "";
+	display: block;
+	width: 11px;
+	height: 11px;
+	position: absolute;
+	top: 5px;
+	left: 0;
+	border: 1px solid #d70e2a;
+	border-radius: 50%;
+}
+
+.list__ul--item:after {
+	content: "";
+	display: block;
+	width: 3px;
+	height: 3px;
+	position: absolute;
+	top: 8.5px;
+	left: 4px;
+	background: #d70e2a;
+	border-radius: 50%;
+}
+
+.list__ul--dash {
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 24px;
+	list-style: none;
+}
+
+.list__ul--dash:last-child {
+	margin-bottom: 0px;
+}
+
+.list__ul--dash:first-child:before {
+	content: "—";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #ee8615;
+}
+
+.list__circle {
+	counter-reset: li;
+	padding: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+
+.list__circle--item {
+	position: relative;
+	min-height: 33px;
+	padding-top: 3px;
+	margin-bottom: 10px;
+	padding-left: 53px;
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+					flex-direction: column;
+}
+
+.list__circle--item span {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	min-height: 33px;
+}
+
+.list__circle--item:last-child {
+	margin-bottom: 0px;
+}
+
+.list__circle--item:before {
+	content: counter(li);
+	counter-increment: li;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: center;
+			-ms-flex-pack: center;
+					justify-content: center;
+	width: 33px;
+	height: 33px;
+	border: 1px;
+	border-style: solid;
+	border-color: transparent;
+	background: transparent;
+	color: white;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.list--orange .list__circle--item:before {
+	background: #ee8615;
+}
+
+.list--blue .list__circle--item:before {
+	background: #0e1271;
+}
+
+.list--orange_border .list__circle--item:before {
+	color: #d70e2a;
+	border-color: rgba(238, 134, 21, 0.3);
+	background: white;
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+					box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+					</code>
+				</pre></div></div></div><!-- title --><div class="grid mb-blue"><div class="row mb-cyan" id="title"><div class="col-23"><h1 class="h1">Заголовки</h1></div></div><div class="row mb-pink"><div class="col-23"><h1 class="h1">H1</h1></div></div><div class="row mb-pink"><div class="col-23"><h2 class="h2">H2</h2></div></div><div class="row mb-pink"><div class="col-23"><h3 class="h3">H3</h3></div></div><div class="row mb-pink"><div class="col-23"><h4 class="h4">H4</h4></div></div><div class="row mb-pink"><div class="col-23"><h5 class="h5">H5</h5></div></div><div class="row mb-yellow"><div class="col-23"><h6 class="h6">H6</h6></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<h1 class="h1">H1</h1>
+<h2 class="h2">H2</h2>
+<h3 class="h3">H3</h3>
+<h4 class="h4">H4</h4>
+<h5 class="h5">H5</h5>
+<h6 class="h6">H6</h6>
+</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+			<code class="language-css">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+font-family: "PT Root UI_Bold", sans-serif !important;
+font-weight: inherit;
+}
+
+h1,
+.h1 {
+font-size: 38px;
+line-height: 50px;
+}
+
+@media (max-width: 719px) {
+h1,
+.h1 {
+font-size: 30px;
+line-height: 40px;
+}
+}
+
+h2,
+.h2 {
+font-size: 30px;
+line-height: 40px;
+}
+
+@media (max-width: 719px) {
+h2,
+.h2 {
+font-size: 22px;
+line-height: 31px;
+}
+}
+
+h3,
+.h3 {
+font-size: 22px;
+line-height: 31px;
+}
+
+@media (max-width: 719px) {
+h3,
+.h3 {
+font-size: 18px;
+line-height: 27px;
+}
+}
+
+h4,
+.h4 {
+font-size: 18px;
+line-height: 27px;
+}
+
+@media (max-width: 719px) {
+h4,
+.h4 {
+font-size: 16px;
+line-height: 24px;
+}
+}
+
+h5,
+.h5 {
+font-size: 16px;
+line-height: 24px;
+}
+
+@media (max-width: 719px) {
+h5,
+.h5 {
+font-size: 14px;
+line-height: 21px;
+}
+}
+
+h6,
+.h6 {
+font-size: 14px;
+line-height: 21px;
+}
+
+@media (max-width: 719px) {
+h6,
+.h6 {
+font-size: 12px;
+line-height: 17px;
+}
+}
+			</code>
+		</pre></div></div></div><!-- text --><div class="grid mb-blue"><div class="row mb-cyan" id="text"><div class="col-23"><h1 class="h1">Текста</h1></div></div><div class="row mb-pink"><div class="col-23"><p class="text text__xxl">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row mb-pink"><div class="col-23"><p class="text text__xl">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row mb-pink"><div class="col-23"><p class="text text__l">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row mb-pink"><div class="col-23"><p class="text text__m">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row mb-pink"><div class="col-23"><p class="text text__s">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row mb-yellow"><div class="col-23"><p class="text text__xs">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<p class="text text__xxl">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+<p class="text text__xl">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+<p class="text text__l">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+<p class="text text__m">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+<p class="text text__s">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+<p class="text text__xs">Съешь ещё этих мягких французских булок, да выпей же чаю. 1234567890</p>
+				</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+					<code class="language-css">
+.text:last-child {
+	margin-bottom: 0px;
+}
+
+.text__xxl {
+	font-size: 22px !important;
+	line-height: 30px !important;
+}
+
+@media (max-width: 719px) {
+	.text__xxl {
+		font-size: 18px !important;
+		line-height: 27px !important;
+	}
+}
+
+.text__xl {
+	font-size: 18px !important;
+	line-height: 27px !important;
+}
+
+@media (max-width: 719px) {
+	.text__xl {
+		font-size: 16px !important;
+		line-height: 24px !important;
+	}
+}
+
+.text__l {
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+@media (max-width: 719px) {
+	.text__l {
+		font-size: 14px !important;
+		line-height: 21px !important;
+	}
+}
+
+.text__m {
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+@media (max-width: 719px) {
+	.text__m {
+		font-size: 12px !important;
+		line-height: 17px !important;
+	}
+}
+
+.text__s {
+	font-size: 12px !important;
+	line-height: 17px !important;
+}
+
+@media (max-width: 719px) {
+	.text__s {
+		font-size: 10px !important;
+		line-height: 14px !important;
+	}
+}
+
+.text__xs {
+	font-size: 10px !important;
+	line-height: 14px !important;
+}
+
+.text__nowrap {
+	white-space: nowrap;
+}
+
+.text__bold {
+	font-family: "PT Root UI_Bold", sans-serif;
+}
+
+.text__lighter {
+	font-family: "PT Root UI_Light", sans-serif;
+}
+
+.text__bold {
+	font-family: "PT Root UI_Bold", sans-serif;
+}
+
+.text__uppercase {
+	text__transform: uppercase;
+}
+					</code>
+				</pre></div></div></div><!-- margins --><div class="grid mb-blue"><div class="row mb-cyan" id="margins"><div class="col-23"><h1 class="h1">Отступы между элементами и их соответствие между мобильной версией и декстоп (внутри компонетнов может не соблюдаться)</h1></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5">Отступ между элементами 70px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-blue"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #0038FF; height: 70px"></div></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5">Отступ между элементами 60px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-red"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #FF004C; height: 60px"></div></div></div><div class="row center mb-yellow"><div class="col-13"><h6 class="h6 text-center">Отступы между разделами:</h6></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5">Отступ между элементами 50px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-green"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #44B400; height: 50px"></div></div></div><div class="row center mb-yellow"><div class="col-13"><h6 class="h6 text-center">Базовый отступ между элементами крупного раздела:</h6></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5">Отступ между элементами 40px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-yellow"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #FFC700; height: 40px"></div></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5 text-left">Отступ между элементами 30px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-cyan"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #0ec7ff; height: 30px"></div></div></div><div class="row center mb-yellow"><div class="col-13"><h6 class="h6 text-center">Отступы между подзаголовком компонента и основным текстом компонента:</h6></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5 text-left">Отступ между элементами 20px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-magenta"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #FF00FF; height: 20px"></div></div></div><div class="row center mb-pink"><div class="col-13"><h5 class="h5 text-left">Отступ между элементами 10px</h5></div></div><div class="row center mb-pink"><div class="col-13"><textarea class="site site__textarea" disabled="disabled">
+<div class="row mb-pink"></div>
+							</textarea></div></div><div class="row center mb-yellow"><div class="col-13"><div class="text-white" style="background-color: #D55DFF; height: 10px"></div></div></div><div class="row"><div class="col-23"><pre class="code">
+						<code class="language-css">
+.mb-blue {
+	margin-bottom: 70px !important;
+}
+
+.mb-red {
+	margin-bottom: 60px !important;
+}
+
+.mb-green {
+	margin-bottom: 50px !important;
+}
+
+.mb-yellow {
+	margin-bottom: 40px !important;
+}
+
+.mb-cyan {
+	margin-bottom: 30px !important;
+}
+
+.mb-magenta {
+	margin-bottom: 20px !important;
+}
+
+.mb-pink {
+	margin-bottom: 10px !important;
+}
+
+						</code>
+					</pre></div></div></div><!-- Элемент подсветки --><div class="grid mb-blue"><div class="row mb-cyan" id="highlighters"><div class="col-23 mb-cyan"><h1 class="h1">Подсветка элементов</h1></div></div><div class="row center mb-yellow"><div class="col-13"><div style="display: flex; justify-content: space-around;"><div data-highlighter="1-1" class="highlight-elem">A</div><div data-highlighter="1-2, 2-2" class="highlight-elem">B</div><div data-highlighter="1-3, 2-3" class="highlight-elem">C</div><div data-highlighter="1-4" class="highlight-elem">4</div></div></div></div><div class="row center mb-yellow"><div class="col-1"></div><div class="col-15"><div class="text__l">Фильтр грубой <span data-highlighter="1-1, 1-2" class="highlighter">очистки (A, B)</span> предназначен для увеличения интервала очистки воздушного фильтра (2) за счет заблаговременного удаления крупных частиц пыли. Установив фильтр грубой, можно увеличить периодичность очистки воздушного <span data-highlighter="2-2, 2-3" class="highlighter">ЭЛЕМЕНТЫ (B, C)</span>, поскольку в этом случае в воздушном фильтре (C) будут скапливаться только мелкие частицы пыли. Фильтр (1) используется в качестве дополнительного устройства на транспортных средствах, предназначенных для эксплуатации в <span data-highlighter="1-3" class="highlighter">очистки (C)</span> повышенной запыленности – например, на песчаных и пылеобразных грунтах или на <span data-highlighter="1-4" class="highlighter">очистки (4)</span> отходов.</div></div></div><div class="row center mb-yellow"><div class="col-13"><div style="display: flex; justify-content: space-around;"><div data-highlighter="1-5" class="highlight-elem highlight-elem__pin">A</div><div data-highlighter="1-6, 2-4" class="highlight-elem highlight-elem__pin">B</div><div data-highlighter="1-7, 2-5" class="highlight-elem highlight-elem__pin">C</div><div data-highlighter="1-8" class="highlight-elem highlight-elem__pin">4</div></div></div></div><div class="row center mb-yellow"><div class="col-1"></div><div class="col-15"><div class="text__l">Фильтр грубой <span data-highlighter="1-5, 1-6" class="highlighter">очистки (A, B)</span> предназначен для увеличения интервала очистки воздушного фильтра (2) за счет заблаговременного удаления крупных частиц пыли. Установив фильтр грубой, можно увеличить периодичность очистки воздушного <span data-highlighter="2-4, 2-5" class="highlighter">ЭЛЕМЕНТЫ (B, C)</span>, поскольку в этом случае в воздушном фильтре (C) будут скапливаться только мелкие частицы пыли. Фильтр (1) используется в качестве дополнительного устройства на транспортных средствах, предназначенных для эксплуатации в <span data-highlighter="1-7" class="highlighter">очистки (C)</span> повышенной запыленности – например, на песчаных и пылеобразных грунтах или на <span data-highlighter="1-8" class="highlighter">очистки (4)</span> отходов.</div></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h5 text-center">Подсветка элементов большая</h5></div></div><div class="row center mb-yellow"><div class="col-13"><div style="display: flex; justify-content: space-around;"><div data-highlighter="1-9" class="highlight-elem large">A</div></div></div></div><div class="row center mb-yellow"><div class="col-1"></div><div class="col-15"><div class="text__l">Фильтр грубой <span data-highlighter="1-9" class="highlighter">очистки </span>предназначен для увеличения интервала очистки воздушного фильтра.</div></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h5 text-center">Подсветка элементов средняя</h5></div></div><div class="row center mb-yellow"><div class="col-13"><div style="display: flex; justify-content: space-around;"><div data-highlighter="1-10" class="highlight-elem medium">A</div></div></div></div><div class="row center mb-yellow"><div class="col-1"></div><div class="col-15"><div class="text__l">Фильтр грубой <span data-highlighter="1-10" class="highlighter">очистки </span>предназначен для увеличения интервала очистки воздушного фильтра.</div></div></div><div class="row mb-yellow"><div class="col-23"><h5 class="h5 text-center">Подсветка элементов маленькая</h5></div></div><div class="row center mb-yellow"><div class="col-13"><div style="display: flex; justify-content: space-around;"><div data-highlighter="1-11" class="highlight-elem small">A</div></div></div></div><div class="row center mb-yellow"><div class="col-1"></div><div class="col-15"><div class="text__l">Фильтр грубой <span data-highlighter="1-11" class="highlighter">очистки </span>предназначен для увеличения интервала очистки воздушного фильтра.</div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div data-highlighter="1-1" class="highlight-elem">
+	A
+</div>
+<div data-highlighter="1-2" class="highlight-elem">
+	B
+</div>
+<div data-highlighter="1-3" class="highlight-elem">
+	C
+</div>
+<div data-highlighter="1-4" class="highlight-elem">
+	4
+</div>
+<span data-highlighter="1-1" class="highlighter"></span>
+<span data-highlighter="1-2" class="highlighter"></span>
+<span data-highlighter="1-3" class="highlighter"></span>
+<span data-highlighter="1-4" class="highlighter"></span>
+			</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+				<code class="language-css">
+.highlighter {
+	color: #ee8615;
+	cursor: default;
+	transition: all 0.4s;
+	padding: 2px;
+}
+.highlighter.active {
+	background: #ee8615;
+	color: #fff;
+	cursor: pointer;
+}
+.highlight-elem {
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	border: #ee8615 1px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ee8615;
+	font-size: 12px;
+	line-height: 174px;
+	transition: all 0.4s;
+}
+.highlight-elem.active {
+	background: #0e1271;
+	border-color: #0e1271;
+	color: white;
+	cursor: pointer;
+}
+
+				</code>
+			</pre></div></div></div><!-- Элемент галлерея --><div class="grid mb-blue"><div class="row mb-cyan" id="gallery"><div class="col-23 mb-cyan"><h1 class="h1">Галерея</h1></div><div class="col-23"><h1 class="h3">Синяя</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-11"><div class="swiper-blue"><div class="swiper-container swiper-container--no-pagination"><div class="swiper-nav"><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div></div></div></div></div><div class="col-1"></div><div class="col-11"><div class="swiper-blue"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><div><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Текст продолжил семантика грустный рыбными заманивший рукописи, но великий толку буквоград ведущими, скатился составитель безорфографичный гор безопасную единственное путь не пояс предупредила всемогущая, правилами собрал грамматики дал. Великий океана взобравшись журчит свой знаках рыбного</div></div></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h1 class="h3">Белая</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-white"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Текст продолжил семантика грустный рыбными заманивший рукописи, но великий толку буквоград ведущими, скатился составитель безорфографичный гор безопасную единственное путь не пояс предупредила всемогущая, правилами собрал грамматики дал. Великий океана взобравшись журчит свой знаках рыбного</div></div></div></div></div></div></div><div class="col-11"><div class="swiper-white"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Текст продолжил семантика грустный рыбными заманивший рукописи, но великий толку буквоград ведущими, скатился составитель безорфографичный гор безопасную единственное путь не пояс предупредила всемогущая, правилами собрал грамматики дал. Великий океана взобравшись журчит свой знаках рыбного</div></div></div></div></div></div></div><div class="col-1"></div><div class="col-11"><div class="swiper-white"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Текст продолжил семантика грустный рыбными заманивший рукописи, но великий толку буквоград ведущими, скатился составитель безорфографичный гор безопасную единственное путь не пояс предупредила всемогущая, правилами собрал грамматики дал. Великий океана взобравшись журчит свой знаках рыбного</div></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h1 class="h3">Со статичной картинкой</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue"><img src="images/track.png" class="img-fluid" alt="track"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Подзаголовок ее lorem снова вдали продолжил лучше за оксмокс журчит.</div></div></div><div class="swiper-slide"><div class="swiper-slide__content"><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h1 class="h3">Со сменной картинкой</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue swiper-blue--gallery-300"><div class="swiper-container"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"></div><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><div class="text__l">Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Подзаголовок ее lorem снова вдали продолжил лучше за оксмокс журчит.</div></div></div><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"></div><h5 class="h5 mb-pink">Преимущества Auto Layout:</h5><ul class="list list__ul text text__l"><li class="list__ul--dash">Отступы формируются автоматически. Ничего не надо делать вручную.</li><li class="list__ul--dash">Фрейм так же формируется автоматически.</li></ul></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h1 class="h3">С заголовком</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue swiper-blue--gallery-300"><div class="swiper-container swiper-container--no-pagination"><div class="swiper-nav"><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"><div class="swiper-slide__image-title">Далеко-далеко за словесными горами</div></div></div></div><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"><div class="swiper-slide__image-title">Lorem ipsum dolor sit.</div></div></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><h1 class="h3">Галерея</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue swiper-blue--gallery-300"><div class="swiper-container swiper-container--middle"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination swiper-pagination--middle"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"></div></div></div><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"></div></div></div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="swiper-blue swiper-blue--gallery-420"><div class="swiper-container swiper-container--middle"><div class="swiper-nav"><!-- Add Pagination --><div class="swiper-pagination"></div><!-- Add Arrows --><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div><div class="swiper-wrapper"><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track-420.png" class="img-fluid" alt="track"></div></div></div><div class="swiper-slide"><div class="swiper-slide__content"><div class="swiper-slide__image-content"><img src="images/track.png" class="img-fluid" alt="track"></div></div></div></div></div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="swiper-blue">
+	<div class="swiper-container">
+		<div class="swiper-nav">
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="swiper-slide__content">
+					<div class="col-16">
+						<h5 class="h5 mb-magenta">Преимущества Auto Layout:</h5>
+						<ul class="list list__ul text text__l">
+							<li class="list__ul--dash">Отступы формируются автоматически. Ничего не
+								надо
+								делать вручную.</li>
+							<li class="list__ul--dash">Фрейм так же формируется автоматически.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-slide__content">
+					<div class="col-16">
+
+						<h5 class="h5 mb-magenta">Преимущества Auto Layout:</h5>
+						<ul class="list list__ul text text__l">
+							<li class="list__ul--dash">Отступы формируются автоматически. Ничего не
+								надо
+								делать вручную.</li>
+							<li class="list__ul--dash">Фрейм так же формируется автоматически.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="swiper-white">
+	<div class="swiper-container">
+		<div class="swiper-nav">
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="swiper-slide__content">
+					<div class="col-23">
+						<h5 class="h5 mb-magenta">Преимущества Auto Layout:</h5>
+						<ul class="list list__ul text text__l">
+							<li class="list__ul--dash">Отступы формируются автоматически. Ничего не
+								надо
+								делать вручную.</li>
+							<li class="list__ul--dash">Фрейм так же формируется автоматически.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-slide__content">
+					<div>
+						<h5 class="h5 mb-magenta">Преимущества Auto Layout:</h5>
+						<div class="text__l">
+							Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. Текст
+							продолжил семантика грустный рыбными заманивший рукописи, но великий толку буквоград ведущими,
+							скатился составитель безорфографичный гор безопасную единственное путь не пояс предупредила
+							всемогущая, правилами собрал грамматики дал. Великий океана взобравшись журчит свой знаках
+							рыбного
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+			</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+					<code class="language-css">
+.swiper-blue {
+	position: relative;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.07);
+	-webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+					box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	background-color: #0e1271; }
+	.swiper-blue .swiper-slide {
+		font-size: 22px;
+		line-height: 30px; }
+	.swiper-blue .swiper-slide__content {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		padding: 45px 70px 30px;
+		color: white; }
+		@media screen and (max-width: 719px) {
+			.swiper-blue .swiper-slide__content {
+				padding: 20px 15px 35px 15px; } }
+	.swiper-blue .swiper-nav {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: 0 auto; }
+		@media screen and (max-width: 719px) {
+			.swiper-blue .swiper-nav {
+				width: 100%; } }
+	.swiper-blue .swiper-button-prev,
+	.swiper-blue .swiper-button-next {
+		z-index: 20;
+		margin: 0;
+		top: 0;
+		min-height: 100%;
+		cursor: pointer;
+		background-position: center top 15px;
+		background-size: 32px; }
+		.swiper-blue .swiper-button-prev.swiper-button-disabled,
+		.swiper-blue .swiper-button-next.swiper-button-disabled {
+			opacity: 1; }
+	.swiper-blue .swiper-button-prev {
+		width: 70px;
+		max-width: 50%;
+		font-size: 0;
+		left: 0;
+		z-index: 10;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjMiIHk9IjciIHdpZHRoPSIyNiIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTE0LjEyMTIgOC43MDcxOEwxMi43MDcgNy4yOTI5N0wzLjk5OTg4IDE2LjAwMDFMMTIuNzA3IDI0LjcwNzJMMTQuMTIxMiAyMy4yOTNMNy44MjgyMyAxN0gyOC40MTQxVjE1SDcuODI4MzhMMTQuMTIxMiA4LjcwNzE4WiIgZmlsbD0iYmxhY2siLz48L21hc2s+PGcgbWFzaz0idXJsKCNtYXNrMCkiPjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0id2hpdGUiLz48L2c+PC9zdmc+); }
+	.swiper-blue .swiper-button-next {
+		width: 70px;
+		max-width: 50%;
+		height: 140px;
+		font-size: 0;
+		right: 0;
+		z-index: 10;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bWFzayBpZD0ibWFzazAiIG1hc2stdHlwZT0iYWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjMiIHk9IjciIHdpZHRoPSIyNiIgaGVpZ2h0PSIxOCI+PHBhdGggZD0iTTE3Ljg3ODggOC43MDcxOEwxOS4yOTMgNy4yOTI5N0wyOC4wMDAxIDE2LjAwMDFMMTkuMjkzIDI0LjcwNzJMMTcuODc4OCAyMy4yOTNMMjQuMTcxOCAxN0gzLjU4NTk0VjE1SDI0LjE3MTZMMTcuODc4OCA4LjcwNzE4WiIgZmlsbD0iYmxhY2siLz48L21hc2s+PGcgbWFzaz0idXJsKCNtYXNrMCkiPjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIDEgMzIgMCkiIGZpbGw9IndoaXRlIi8+PC9nPjwvc3ZnPg==); }
+	.swiper-blue .swiper-pagination {
+		width: 100%;
+		margin-top: 10px;
+		z-index: 10; }
+	.swiper-blue .swiper-pagination-bullet {
+		width: 7px;
+		height: 7px;
+		margin-right: 7px;
+		background: rgba(255, 255, 255, 0.8); }
+		.swiper-blue .swiper-pagination-bullet:last-child {
+			margin-right: 0px; }
+	.swiper-blue .swiper-pagination-bullet-active {
+		background: white; }
+
+.swiper-white {
+	position: relative;
+	width: 100%;
+	margin-top: 70px;
+	border-top: 1px solid black; }
+	.swiper-white .swiper-slide {
+		font-size: 22px;
+		line-height: 30px; }
+	.swiper-white .swiper-slide__content {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+				-ms-flex-pack: center;
+						justify-content: center;
+		max-width: 760px;
+		min-width: 440px;
+		-webkit-box-align: center;
+				-ms-flex-align: center;
+						align-items: center;
+		padding: 20px 0;
+		margin: 0 auto; }
+		@media screen and (max-width: 719px) {
+			.swiper-white .swiper-slide__content {
+				padding: 20px 15px 35px 15px; } }
+	.swiper-white .swiper-nav {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: -70px;
+		right: 0;
+		left: 0;
+		margin: 0 auto; }
+		@media screen and (max-width: 719px) {
+			.swiper-white .swiper-nav {
+				width: 100%; } }
+	.swiper-white .swiper-button-prev,
+	.swiper-white .swiper-button-next {
+		z-index: 20;
+		margin: 0;
+		top: 0;
+		min-height: 100%;
+		cursor: pointer;
+		background-position: center top 15px;
+		background-size: 32px; }
+		.swiper-white .swiper-button-prev.swiper-button-disabled,
+		.swiper-white .swiper-button-next.swiper-button-disabled {
+			opacity: 1; }
+	.swiper-white .swiper-button-prev {
+		width: 70px;
+		max-width: 50%;
+		font-size: 0;
+		left: 0;
+		z-index: 10;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuMTIxMyAxLjQxNDIxTDguNzA3MTEgMEwwIDguNzA3MTFMOC43MDcxMSAxNy40MTQyTDEwLjEyMTMgMTZMMy44MjgzNSA5LjcwNzAzSDI0LjQxNDJWNy43MDcwM0gzLjgyODVMMTAuMTIxMyAxLjQxNDIxWiIgZmlsbD0iIzBFMTI3MSIvPjwvc3ZnPg==); }
+	.swiper-white .swiper-button-next {
+		width: 70px;
+		max-width: 50%;
+		height: 140px;
+		font-size: 0;
+		right: 0;
+		z-index: 20;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTQuODc4NyAxLjQxNDIxTDE2LjI5MjkgMEwyNSA4LjcwNzExTDE2LjI5MjkgMTcuNDE0MkwxNC44Nzg3IDE2TDIxLjE3MTYgOS43MDcwM0gwLjU4NTgxNVY3LjcwNzAzSDIxLjE3MTVMMTQuODc4NyAxLjQxNDIxWiIgZmlsbD0iIzBFMTI3MSIvPjwvc3ZnPg==); }
+	.swiper-white .swiper-pagination {
+		width: 100%;
+		margin-top: 10px;
+		z-index: 10; }
+	.swiper-white .swiper-pagination-bullet {
+		width: 7px;
+		height: 7px;
+		margin-right: 7px;
+		background: rgba(14, 18, 113, 0.8); }
+		.swiper-white .swiper-pagination-bullet:last-child {
+			margin-right: 0px; }
+	.swiper-white .swiper-pagination-bullet-active {
+		background: #0e1271;
+		position: relative; }
+		.swiper-white .swiper-pagination-bullet-active::before {
+			content: '';
+			width: 25px;
+			height: 31px;
+			position: absolute;
+			top: -35px;
+			left: -8px;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMzEiIHZpZXdCb3g9IjAgMCAyNSAzMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjUgMTIuNUMyNSAxOS40MDM2IDE1IDI2IDEyLjUgMzFDMTAgMjYgMCAxOS40MDM2IDAgMTIuNUMwIDUuNTk2NDQgNS41OTY0NCAwIDEyLjUgMEMxOS40MDM2IDAgMjUgNS41OTY0NCAyNSAxMi41WiIgZmlsbD0iI0VFODYxNSIvPjxwYXRoIGQ9Ik0xMC41IDdWMTdNMTQuNSA3VjEyVjE3TTggOUw1IDEyTDggMTVNMTcgOUwyMCAxMkwxNyAxNSIgc3Ryb2tlPSJ3aGl0ZSIvPjwvc3ZnPg==); }
+
+					</code>
+				</pre></div></div></div><!-- outline-block --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="outline-block"><div class="col-23"><h1 class="h1">Блок с рамкой</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="outline-block"><div class="outline-block__title">Предварительное требование</div><div class="text__l">Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Переписали, свой пустился первую безорфографичный даль толку мир рукопись от всех.</div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="outline-block"><div class="outline-block__title">Предварительное требование</div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="outline-block"><div class="text__l">Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Переписали, свой пустился первую безорфографичный даль толку мир рукопись от всех.</div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="outline-block">
+	<div class="outline-block__title">
+	Предварительное требование
+	</div>
+	<div class="text__l">
+	Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. Переписали, свой
+	пустился первую безорфографичный даль толку мир рукопись от всех.
+	</div>
+</div>
+		</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+			<code class="language-css">
+.outline-block {
+	border: #e7e7f1 1px solid;
+	padding: 30px 40px;
+	font-family: "Montserrat-Medium", sans-serif;
+	font-size: 16px !important;
+	line-height: 24px !important;
+}
+
+.outline-block__title {
+	font-size: 30px !important;
+	line-height: 40px !important;
+	margin-bottom: 15px;
+	font-family: "Montserrat-Bold", sans-serif;
+}
+
+.outline-block div:last-of-type {
+	margin-bottom: 0;
+}
+			</code>
+		</pre></div></div></div><!-- panel --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="panel"><div class="col-23"><h1 class="h1">Элемент карточка</h1></div></div><div class="row mb-yellow"><div class="col-7"><div class="panel"><div class="panel__title">1</div><div class="text__l">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, culpa?</div></div></div><div class="col-1"></div><div class="col-7"><div class="panel"><div class="panel__title">2</div><div class="text__l">Проверка текста Auto Layout Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Пояс великий, букв злых одна сих несколько образ наш? Назад!</div></div></div><div class="col-1"></div><div class="col-7"><div class="panel"><div class="panel__title">3</div><div class="text__l">Проверка текста Auto Layout Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, molestiae?</div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="panel">
+	<div class="h2 text-dark-blue">2</div>
+	<div class="text text__l">Проверка текста Auto Layout Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Пояс великий, букв злых одна сих несколько образ наш? Назад!</div>
+</div>
+		</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+			<code class="language-css">
+.panel {
+position: relative;
+width: 100%;
+height: 100%;
+border: 1px solid #c4c4c4;
+border-radius: 5px;
+padding: 20px 15px
+}
+
+.panel__img {
+margin-bottom: 20px;
+text-align: center
+}
+
+.panel__img-full {
+margin-bottom: 20px;
+width: calc(100% + 30px);
+margin-left: -15px;
+margin-right: -15px;
+text-align: center
+}
+
+.panel__img img,
+.panel__img-full img {
+display: inline-block;
+max-width: 100%;
+height: auto
+}
+			</code>
+		</pre></div></div></div><!-- Audio --><div class="grid mb-blue mt-yellow"><div class="row mb-cyan" id="audio"><div class="col-23"><h1 class="h1">Элемент аудио</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="audio-player"><audio><source src="audios/audio_1.mp3"></audio><div class="control-bar"><div id="playBtn" class="play"></div><div class="timer">0:00</div><div class="progress-bar"><div id="progress" class="progress-line"></div></div><div class="end">0:00</div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="audio-player"><audio><source src="audios/audio_2.mp3"></audio><div class="control-bar"><div id="playBtn" class="play"></div><div class="timer">0:00</div><div class="progress-bar"><div id="progress" class="progress-line"></div></div><div class="end">0:00</div></div></div></div></div><div class="row"><div class="col-23" style="height: 450px"><textarea class="site site__textarea" disabled="disabled">
+	<div class="audio-player">
+		<audio>
+			<source src="audios/audio_2.mp3">
+		</audio>
+		<div class="control-bar">
+			<div id="playBtn" class="play"></div>
+			<div class="timer">
+				0:00
+			</div>
+			<div class="progress-bar">
+				<div id="progress" class="progress-line"></div>
+			</div>
+			<div class="end">
+				0:00
+			</div>
+		</div>
+	</div>
+		</textarea></div></div></div><!-- table --><div class="grid mt-yellow"><div class="row mb-cyan" id="table"><div class="col-23"><h1 class="h1">Таблица</h1></div></div><div class="row mb-yellow"><div class="col-23"><div class="table"><div class="table__row border-bottom"><div class="table__cell"><div class="text text__s">№</div></div><div class="table__cell"><div class="text text__s">Характеристики</div></div><div class="table__cell"><div class="text text__s">PC6</div></div><div class="table__cell"><div class="text text__s">PC7</div></div><div class="table__cell"><div class="text text__s"></div></div></div><div class="table__row border-bottom"><div class="table__cell"><div class="text text__s">1</div></div><div class="table__cell"><div class="text text__s">Тип пароля</div></div><div class="table__cell"><div class="text text__s">Нет</div></div><div class="table__cell"><div class="text text__s">Только для запуска ДВС</div></div><div class="table__cell"><div class="text text__s">Для запуска ДВС + сменн. оборуд./ТО</div></div></div><div class="table__row border-bottom"><div class="table__cell"><div class="text text__s">2</div></div><div class="table__cell"><div class="text text__s">Пароль для запуска двигателя</div></div><div class="table__cell"><div class="text text__s">Нет</div></div><div class="table__cell"><div class="text text__s">Только для запуска ДВС</div></div><div class="table__cell"><div class="text text__s">После 10 мин. установки замка зажигания в положении ВКЛ.</div></div></div><div class="table__row border-bottom"><div class="table__cell"><div class="text text__s">3</div></div><div class="table__cell"><div class="text text__s">Постоянный пароль по умолчанию</div></div><div class="table__cell"><div class="text text__s">Нет</div></div><div class="table__cell"><div class="text text__s">10 минут после запуска ДВС</div></div><div class="table__cell"><div class="text text__s">ОБА, после 10 мин. установки замка зажигания в положении ВКЛ.</div></div></div><div class="table__row border-bottom"><div class="table__cell"><div class="text text__s">4</div></div><div class="table__cell"><div class="text text__s">Избераемость пароля для режимов ТО и сменного оборудования</div></div><div class="table__cell"><div class="text text__s">Монитор</div></div><div class="table__cell"><div class="text text__s">Только для запуска ДВС</div></div><div class="table__cell"><div class="text text__s">Для запуска ДВС + сменн. оборуд./ТО</div></div></div><div class="table__row"><div class="table__cell"><div class="text text__s">Примечание</div></div><div class="table__cell"><div class="text text__s">Регулировка отображаемой наработки только в сторону увлечения</div></div><div class="table__cell"><div class="text text__s">Да</div></div><div class="table__cell"><div class="text text__s">Да, код регулировки 90</div></div><div class="table__cell"><div class="text text__s">Да, код регулировки 90</div></div></div></div></div></div><div class="row mb-yellow"><div class="col-23"><div class="table-v"><div class="table__row"><div class="table__cell border-right" style="width: 33%"><div class="text text__s text-uppercase text-green text-center">Достоинства</div></div><div class="table__cell border-right" style="width: 33%"><div class="text text__s text-uppercase text-red text-center">недостатки</div></div><div class="table__cell" style="width: 33%"><div class="text text__s text-uppercase text-center">нейтральное</div></div></div><div class="table__row"><div class="table__cell border-right"><div class="text text__s text-center">скорость</div></div><div class="table__cell border-right"><div class="text text__s text-center">потребление</div></div><div class="table__cell"><div class="text text__s text-center">требуют двух человек для полноценной работы</div></div></div><div class="table__row"><div class="table__cell border-right"><div class="text text__s text-center">вес</div></div><div class="table__cell border-right"><div class="text text__s text-center">нагрев</div></div><div class="table__cell"><div class="text text__s text-center"></div></div></div><div class="table__row"><div class="table__cell border-right"><div class="text text__s text-center">размер</div></div><div class="table__cell border-right"><div class="text text__s text-center">время работы</div></div><div class="table__cell"><div class="text text__s text-center"></div></div></div></div></div></div><div class="row"><div class="col-11"><textarea class="site site__textarea" disabled="disabled">
+<div class="table">
+<div class="table__row border-bottom">
+<div class="table__cell">
+<div class="text text__s">№</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Характеристики</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">PC6</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">PC7</div>
+</div>
+<div class="table__cell">
+<div class="text text__s"></div>
+</div>
+</div>
+<div class="table__row border-bottom">
+<div class="table__cell">
+<div class="text text__s">1</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Тип пароля</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Нет</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Только для запуска ДВС</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Для запуска ДВС + сменн. оборуд./ТО</div>
+</div>
+</div>
+<div class="table__row border-bottom">
+<div class="table__cell">
+<div class="text text__s">2</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Пароль для запуска двигателя</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Нет</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Только для запуска ДВС</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">После 10 мин. установки замка зажигания в положении ВКЛ.</div>
+</div>
+</div>
+<div class="table__row border-bottom">
+<div class="table__cell">
+<div class="text text__s">3</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Постоянный пароль по умолчанию</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Нет</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">10 минут после запуска ДВС</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">ОБА, после 10 мин. установки замка зажигания в положении ВКЛ.</div>
+</div>
+</div>
+<div class="table__row border-bottom">
+<div class="table__cell">
+<div class="text text__s">4</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Избераемость пароля для режимов ТО и сменного оборудования</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Монитор</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Только для запуска ДВС</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Для запуска ДВС + сменн. оборуд./ТО</div>
+</div>
+</div>
+<div class="table__row">
+<div class="table__cell">
+<div class="text text__s">Примечание</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Регулировка отображаемой наработки только в сторону увлечения</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Да</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Да, код регулировки 90</div>
+</div>
+<div class="table__cell">
+<div class="text text__s">Да, код регулировки 90</div>
+</div>
+</div>
+</div>
+						</textarea></div><div class="col-1"></div><div class="col-11"><pre class="code">
+						<code class="language-css">
+	.table {
+		display: table;
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+		position: relative;
+		z-index: 1
+	}
+
+	.table__row {
+		display: table-row
+	}
+
+	.table__row:first-child>.table__cell {
+		padding-top: 0;
+		padding-bottom: 10px
+	}
+
+	.table__row:last-child>.table__cell {
+		padding-bottom: 0
+	}
+
+	.table__cell {
+		padding: 15px 20px 15px 0;
+		display: table-cell;
+		font-size: 14px !important;
+		line-height: 21px !important;
+		font-family: pt-root-ui-regular, sans-serif
+	}
+
+	.table__cell:last-child {
+		padding-right: 0
+	}
+
+	@media screen and (max-width:719px) {
+		.table__cell {
+			padding: 15px 10px 15px 0
+		}
+	}
+						</code>
+					</pre></div></div></div></main><footer class="footer"></footer><script src="./js/libs.min.js"></script><script src="./js/main.min.js"></script></body></html>

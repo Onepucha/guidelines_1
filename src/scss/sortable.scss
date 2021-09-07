@@ -1,0 +1,22 @@
+.list-group {
+    position: relative;
+    width: 100%;
+
+    &-item {
+        position: relative;
+        width: 100%;
+        list-style: none;
+        padding: 15px 0;
+        border-bottom: 1px solid #E7E7F1;
+        font-size: $fs14;
+        line-height: $lh21;
+
+        &:hover {
+
+        }
+
+        &:first-child {
+            border-top: 1px solid #E7E7F1;
+        }
+    }
+}

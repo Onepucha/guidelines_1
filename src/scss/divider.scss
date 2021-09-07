@@ -1,0 +1,88 @@
+.divider {
+	font-family: $Medium;
+	&__img-rounded {
+		display: flex;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		background: transparent;
+		border-radius: 50%;
+		margin: 0 auto;
+	}
+
+	&__circle {
+		&-blue,
+		&-orange {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 50px;
+			height: 50px;
+			max-width: 50px;
+			max-height: 50px;
+			color: $white;
+			font-family: $Medium;
+			font-size: $fs22;
+			line-height: $lh30;
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+		&-orange {
+			background-color: $orange;
+		}
+		&-blue {
+			background-color: $dark-blue;
+		}
+	}
+
+	&__line {
+		height: 1px;
+		background: rgba($black, 0.1);
+		margin: 20px 0;
+
+		&--item {
+			margin: 0 0 20px 0;
+			color: #000;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-image: linear-gradient(to left, rgba($black, 0.1) 80%, $black 20%) 1 1;
+		}
+
+		&--cross {
+			margin: 20px 0 20px 15px;
+			color: #000;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-color: rgba($red, 0.1);
+			position: relative;
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: "";
+				top: -15px;
+				left: 0;
+				width: 1px;
+				height: 30px;
+				transform: rotate(45deg);
+				background-color: $red;
+			}
+
+			&::after {
+				transform: rotate(-45deg);
+			}
+			&::before {
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	&__row-wrap {
+		display: flex;
+		align-items: center;
+
+		& .divider__img-rounded {
+			margin: 0 22px 0 0;
+		}
+	}
+}

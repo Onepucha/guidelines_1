@@ -1,0 +1,51 @@
+<header class="header fixed-top">
+	<div class="grid">
+		<div class="row">
+			<div class="col-lg-24 col-xs-14">
+				<div id="lmm-menu">
+					<lmm-menu :glossary="glossary" :materials="materials" :menu-items="menuItems" :show-content="true"
+						:show-glossary="true" :show-materials="true">
+					</lmm-menu>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid grid-header">
+		<div class="header__top">
+			<div class="row align-items-center justify-content-between">
+				<!-- logo & text -->
+				<div class="d-flex justify-content-between align-items-center flex-grow">
+					<a href="javascript:void(0);" class="header__link">
+						<p class="header__course-name">Колесный погрузчик. <br> Периодическое техническое обслуживание
+						</p>
+					</a>
+					<!-- nav -->
+					<div class="main-control">
+						<div class="control-bar">
+							<div id="playBtn" class="play"></div>
+							<div class="timer">
+								0:00
+							</div>
+							<div class="progress-bar">
+								<div id="progress" class="progress-line"></div>
+							</div>
+							<div class="end">
+								0:00
+							</div>
+						</div>
+					</div>
+					<div class="header-icon-menu">
+						<sapn class="header-icon-menu__item"></sapn>
+						<sapn class="header-icon-menu__item"></sapn>
+						<sapn class="header-icon-menu__item"></sapn>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__wrapper">
+			<div class="header__wrapper-main">
+				<div class="header__wrapper-progress"></div>
+			</div>
+		</div>
+	</div>
+</header>

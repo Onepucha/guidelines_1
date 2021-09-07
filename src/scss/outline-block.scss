@@ -1,0 +1,16 @@
+.outline-block {
+	border: $light-gray 1px solid;
+	padding: 30px 40px;
+	font-family: $Medium;
+	font-size: $fs16;
+	line-height: $lh24;
+	&__title {
+		font-size: $fs30;
+		line-height: $lh40;
+		margin-bottom: 15px;
+		font-family: $Bold;
+	}
+	& div:last-of-type {
+		margin-bottom: 0;
+	}
+}

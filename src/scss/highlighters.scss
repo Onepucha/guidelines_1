@@ -1,0 +1,85 @@
+.highlighter {
+	color: $orange;
+	cursor: default;
+	transition: all 0.4s;
+	padding: 2px;
+
+	&.active,
+	&:hover {
+		background: $orange;
+		color: #fff;
+		cursor: pointer;
+	}
+}
+
+.highlight-elem {
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	border: $orange 1px solid;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $orange;
+	font-family: $Medium;
+	font-size: $fs12;
+	line-height: $lh17;
+	transition: all 0.4s;
+
+	&.small {
+		height: 25px;
+		width: 25px;
+	}
+
+	&.medium {
+		height: 31px;
+		width: 31px;
+	}
+
+	&.large {
+		height: 37px;
+		width: 37px;
+	}
+
+	&.active {
+		background: $dark-blue;
+		border-color: $dark-blue;
+		color: $white;
+		cursor: pointer;
+	}
+
+	&__pin {
+		font-size: 0px !important;
+		background-color: $orange;
+		border: 7px solid $white;
+		box-shadow: 0 0 1px 1px $orange;
+		background-clip: padding-box;
+
+		&.small {
+			border: 7px solid $white;
+		}
+
+		&.medium {
+			border: 8px solid $white;
+		}
+
+		&.large {
+			border: 9px solid $white;
+		}
+		
+		&:hover {
+			background-color: $white;
+			border-color: $dark-blue;
+			box-shadow: 0 0 1px 1px $dark-blue;
+			background-clip: padding-box;
+		}
+
+		&.active {
+			background-color: $white;
+			border-color: $dark-blue;
+			box-shadow: 0 0 1px 1px $dark-blue;
+			background-clip: padding-box;
+			cursor: pointer;
+		}
+	}
+}

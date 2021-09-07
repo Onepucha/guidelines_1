@@ -1,0 +1,113 @@
+.header {
+    position: relative;
+    background: $white;
+    border: none;
+    overflow: hidden;
+    transition: background 0.4s ease-in-out;
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s, opacity 0.2s;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.4s, opacity 0.2s;
+    }
+
+    &.fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 30 !important;
+    }
+
+    &__top {
+        padding: 10px 0 12px 0;
+    }
+
+    &__link {
+        display: inline-block;
+        position: relative;
+        cursor: default;
+
+        &::after {
+            content: "";
+        }
+    }
+
+    &__img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 117px;
+        height: 22px;
+        margin: 0 30px 0 40px;
+    }
+
+    &__course-name {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: $fs12;
+        line-height: $lh17;
+        color: rgba($black, 0.75);
+    }
+
+    &__slide-name {
+        font-size: $fs10;
+        line-height: $lh14;
+        color: rgba($dark-blue, 0.75);
+        padding: 5px 0px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        background: $white;
+
+        &-main {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: $white;
+            border-top: 1px solid rgba($dark-blue, 0.10);
+        }
+
+        &-progress {
+            position: relative;
+            width: 30%;
+            height: 3px;
+            top: -1px;
+            left: 0px;
+            background: $dark-blue;
+        }
+    }
+
+    &-icon-menu {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        padding: 8px 4px;
+        margin-right: 40px;
+
+        &__item {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: $dark-blue;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        &:hover .header-icon-menu__item {
+            background: $orange;
+        }
+
+        &.disabled {
+            pointer-events: none;
+        }
+    }
+}

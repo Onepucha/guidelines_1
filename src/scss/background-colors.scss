@@ -1,0 +1,17 @@
+.bg {
+    &-black {
+        background: $black !important;
+    }
+
+    &-white {
+        background: $white !important;
+    }
+
+    &-light-blue {
+        background: rgba($blue, 0.75) !important;
+    }
+
+    &-darkBlue {
+        background: $dark-blue !important;
+    }
+}

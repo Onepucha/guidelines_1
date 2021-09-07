@@ -1,0 +1,437 @@
+span.ripple {
+	position: absolute; /* The absolute position we mentioned earlier */
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 600ms linear;
+	background-color: rgba($white, 0.85);
+}
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+
+.btn {
+	// transition: all .3s;
+	font-family: $Medium;
+
+	&__primary,
+	&__secondary,
+	&__light,
+	&__back {
+		&:not(:disabled):not(.disabled) {
+			cursor: pointer;
+		}
+
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			position: relative;
+			overflow: hidden;
+			transition: background 400ms;
+			display: inline-block;
+			border-radius: 50px;
+			white-space: nowrap;
+			vertical-align: middle;
+			outline: none;
+			text-decoration: none;
+
+			&.large {
+				padding: 27px 50px;
+				font-size: $fs16;
+				line-height: $lh24;
+
+				@media only screen and (max-width: 719px) {
+					padding: 12px 22px;
+					font-size: $fs18;
+					line-height: $lh24;
+				}
+			}
+
+			&.medium {
+				padding: 20px 35px;
+				font-size: $fs14;
+				line-height: $lh21;
+			}
+
+			&.small {
+				padding: 7px 20px;
+				font-size: $fs12;
+				line-height: $lh17;
+			}
+
+			&.fill {
+				width: 100%;
+			}
+		}
+	}
+
+	&__primary {
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			background: $dark-blue;
+			color: $white;
+			border: none;
+		}
+		&:hover {
+			text-decoration: none;
+			background: transparent;
+			background-color: rgba($dark-blue, 0.8);
+			color: $white;
+		}
+	}
+
+	&__secondary {
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			border: 1px solid $light-gray;
+			background: $white;
+			color: $dark-blue;
+		}
+		&:hover {
+			text-decoration: none;
+			background: transparent;
+			background-color: rgba($white, 0.8);
+			border-color: $dark-blue;
+		}
+		&--icon {
+			&,
+			&:visited,
+			&:focus,
+			&:active {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&::before {
+				position: relative;
+				height: 24px;
+				margin-right: 10px;
+				content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4LjYxOTUgMy4zMTg2OUMxOS4wMDggMy4zMTg2OSAxOS4zMjkxIDMuNjA3MzggMTkuMzc5OSAzLjk4MTkyTDE5LjM4NjkgNC4wODYwNFY2Ljk3OTlDMTkuMzg2OSA3LjM2ODM4IDE5LjA5ODIgNy42ODk0NCAxOC43MjM3IDcuNzQwMjVMMTguNjE5NSA3Ljc0NzI1SDE1LjcyNTdDMTUuMzAxOSA3Ljc0NzI1IDE0Ljk1ODMgNy40MDM3IDE0Ljk1ODMgNi45Nzk5QzE0Ljk1ODMgNi41OTE0MiAxNS4yNDcgNi4yNzAzNyAxNS42MjE1IDYuMjE5NTZMMTUuNzI1NyA2LjIxMjU1TDE2LjcwNDQgNi4yMTIxQzEzLjc5MTcgMy44NzEzNSA5LjUyMjEzIDQuMDUyMzYgNi44MTkzNCA2Ljc1NTE1QzMuOTIyNTQgOS42NTE5NSAzLjkyMjU0IDE0LjM0ODYgNi44MTkzNCAxNy4yNDU0QzkuNzE2MTQgMjAuMTQyMiAxNC40MTI4IDIwLjE0MjIgMTcuMzA5NiAxNy4yNDU0QzE5LjA3MjUgMTUuNDgyNCAxOS44MTA3IDEyLjk5MjkgMTkuMzQ3NiAxMC41ODk1QzE5LjI2NzQgMTAuMTczNCAxOS41Mzk4IDkuNzcxMDMgMTkuOTU1OSA5LjY5MDg2QzIwLjM3MjEgOS42MTA2OCAyMC43NzQ0IDkuODgzMDQgMjAuODU0NiAxMC4yOTkyQzIxLjQxMyAxMy4xOTc1IDIwLjUyMTcgMTYuMjAzNyAxOC4zOTQ4IDE4LjMzMDZDMTQuODk4NiAyMS44MjY3IDkuMjMwMjggMjEuODI2NyA1LjczNDE0IDE4LjMzMDZDMi4yMzggMTQuODM0NSAyLjIzOCA5LjE2NjA5IDUuNzM0MTQgNS42Njk5NUM5LjA1NDc1IDIuMzQ5MzQgMTQuMzM0OSAyLjE4MjYzIDE3Ljg1MjMgNS4xNjk4MUwxNy44NTIyIDQuMDg2MDRDMTcuODUyMiAzLjY2MjI1IDE4LjE5NTcgMy4zMTg2OSAxOC42MTk1IDMuMzE4NjlaIiBmaWxsPSIjMEUxMjcxIi8+Cjwvc3ZnPgo=);
+			}
+		}
+	}
+
+	&__light {
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			background: transparent;
+			color: $white;
+			border: none;
+		}
+		&:hover {
+			text-decoration: none;
+			background: transparent;
+			background-color: transparent;
+			color: rgba($white, 0.80);
+
+			&:before {
+				opacity: 0.8;
+			}
+		}
+		&--icon {
+			&,
+			&:visited,
+			&:focus,
+			&:active {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&::before {
+				position: relative;
+				height: 24px;
+				margin-right: 10px;
+				content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNSAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5LjExOTUgMy44MTg0NUMxOS41MDggMy44MTg0NSAxOS44MjkgNC4xMDcxMyAxOS44Nzk4IDQuNDgxNjhMMTkuODg2OCA0LjU4NThWNy40Nzk2NkMxOS44ODY4IDcuODY4MTQgMTkuNTk4MiA4LjE4OTE5IDE5LjIyMzYgOC4yNEwxOS4xMTk1IDguMjQ3MDFIMTYuMjI1NkMxNS44MDE4IDguMjQ3MDEgMTUuNDU4MyA3LjkwMzQ1IDE1LjQ1ODMgNy40Nzk2NkMxNS40NTgzIDcuMDkxMTggMTUuNzQ3IDYuNzcwMTMgMTYuMTIxNSA2LjcxOTMxTDE2LjIyNTYgNi43MTIzMUwxNy4yMDQ0IDYuNzExODVDMTQuMjkxNyA0LjM3MTEgMTAuMDIyMSA0LjU1MjEyIDcuMzE5MzEgNy4yNTQ5MUM0LjQyMjUxIDEwLjE1MTcgNC40MjI1MSAxNC44NDgzIDcuMzE5MzEgMTcuNzQ1MUMxMC4yMTYxIDIwLjY0MTkgMTQuOTEyOCAyMC42NDE5IDE3LjgwOTYgMTcuNzQ1MUMxOS41NzI1IDE1Ljk4MjIgMjAuMzEwNiAxMy40OTI2IDE5Ljg0NzYgMTEuMDg5M0MxOS43Njc0IDEwLjY3MzEgMjAuMDM5OCAxMC4yNzA4IDIwLjQ1NTkgMTAuMTkwNkMyMC44NzIxIDEwLjExMDQgMjEuMjc0NCAxMC4zODI4IDIxLjM1NDYgMTAuNzk4OUMyMS45MTMgMTMuNjk3MiAyMS4wMjE3IDE2LjcwMzQgMTguODk0NyAxOC44MzAzQzE1LjM5ODYgMjIuMzI2NSA5LjczMDI1IDIyLjMyNjUgNi4yMzQxMSAxOC44MzAzQzIuNzM3OTggMTUuMzM0MiAyLjczNzk4IDkuNjY1ODUgNi4yMzQxMSA2LjE2OTcxQzkuNTU0NzIgMi44NDkxIDE0LjgzNDkgMi42ODIzOSAxOC4zNTIzIDUuNjY5NTdMMTguMzUyMSA0LjU4NThDMTguMzUyMSA0LjE2MiAxOC42OTU3IDMuODE4NDUgMTkuMTE5NSAzLjgxODQ1WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+			}
+		}
+	}
+
+	&__back {
+		position: relative;
+    	padding: 30px;
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			border: 1px solid $light-gray;
+			background: $white;
+			color: $dark-blue;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-position: center;
+			background-size: 30px;
+			background-repeat: no-repeat;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAyNSAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuMTIxMyAxLjQxNDIxTDguNzA3MTEgMEwwIDguNzA3MTFMOC43MDcxMSAxNy40MTQyTDEwLjEyMTMgMTZMMy44MjgzNSA5LjcwNzAzSDI0LjQxNDJWNy43MDcwM0gzLjgyODVMMTAuMTIxMyAxLjQxNDIxWiIgZmlsbD0iIzBFMTI3MSIvPjwvc3ZnPg==);
+		}
+		&:hover {
+			text-decoration: none;
+			background: transparent;
+			background-color: rgba($white, 0.8);
+			border-color: $dark-blue;
+		}
+	}
+
+	&__default {
+		&:not(:disabled):not(.disabled) {
+			cursor: pointer;
+		}
+
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			display: inline-block;
+			width: auto;
+			border: none;
+			white-space: nowrap;
+			vertical-align: middle;
+			outline: none;
+			background: $white;
+			border: 1px solid transparent;
+			color: $gray;
+			border-color: $gray;
+
+			&.large {
+				padding: 28px 40px;
+				font-size: $fs16;
+				line-height: $lh24;
+
+				@media only screen and (max-width: 719px) {
+					padding: 12px 22px;
+					font-size: $fs12;
+					line-height: $lh17;
+				}
+			}
+
+			&.medium {
+				padding: 20px 35px;
+				font-size: $fs14;
+				line-height: $lh21;
+			}
+
+			&.small {
+				padding: 12px 22px;
+				font-size: $fs12;
+				line-height: $lh17;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+			background: transparent;
+			border-color: $red;
+			color: $red;
+		}
+	}
+
+	&__outline {
+		&:not(:disabled):not(.disabled) {
+			cursor: pointer;
+		}
+
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			display: inline-block;
+			width: auto;
+			white-space: nowrap;
+			vertical-align: middle;
+			outline: none;
+			background-color: transparent;
+			border: 1px solid transparent;
+			border-radius: 10px;
+			color: $red;
+			border-color: rgba($red, 75);
+
+			&.large {
+				padding: 28px 40px;
+				font-size: $fs16;
+				line-height: $lh24;
+
+				@media only screen and (max-width: 719px) {
+					padding: 12px 22px;
+					font-size: $fs12;
+					line-height: $lh17;
+				}
+			}
+
+			&.medium {
+				padding: 20px 35px;
+				font-size: $fs14;
+				line-height: $lh21;
+			}
+
+			&.small {
+				padding: 12px 22px;
+				font-size: $fs12;
+				line-height: $lh17;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+			border-color: $red;
+			background-color: $red;
+			color: $white;
+		}
+	}
+
+	&__dashed {
+		&:not(:disabled):not(.disabled) {
+			cursor: pointer;
+		}
+
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			display: inline-block;
+			width: auto;
+			white-space: nowrap;
+			vertical-align: middle;
+			outline: none;
+			background-color: transparent;
+			border: 1px dashed transparent;
+			color: $gray;
+			border-color: $gray;
+
+			&.xxl {
+				padding: 30px 50px;
+				font-size: $fs16;
+				line-height: $lh24;
+			}
+
+			&.xl {
+				padding: 20px 40px;
+				font-size: $fs16;
+				line-height: $lh24;
+			}
+
+			&.l {
+				padding: 15px 30px;
+				font-size: $fs16;
+				line-height: $lh24;
+			}
+
+			&.m {
+				padding: 10px 25px;
+				font-size: $fs14;
+				line-height: $lh21;
+			}
+
+			&.s {
+				padding: 7px 20px;
+				font-size: $fs14;
+				line-height: $lh21;
+			}
+
+			&.xs {
+				padding: 5px 15px;
+				font-size: $fs12;
+				line-height: $lh17;
+			}
+		}
+
+		&:hover {
+			text-decoration: none;
+			color: $red;
+			border-color: $red;
+		}
+	}
+
+	&__circle {
+		border-radius: 50%;
+	}
+
+	&__round {
+		border-radius: 40px;
+	}
+
+	&__block {
+		display: block;
+		width: 100%;
+	}
+
+	&__center {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	& > i,
+	& > span {
+		display: inline-block;
+		pointer-events: none;
+	}
+
+	& > .icon + span {
+		margin-left: 8px;
+	}
+
+	&.disabled {
+		color: rgba($black, 0.75);
+		background-color: rgba($black, 0.75);
+		border-color: rgba($black, 0.75);
+		text-shadow: none;
+		box-shadow: none;
+		opacity: 1;
+		&.btn__primary {
+			color: $white;
+			background-color: rgba($black, 0.2);
+		}
+		&.btn__secondary,
+		&.btn__back {
+			color: $light-gray;
+			background-color: $white;
+			border-color: $light-gray;
+
+			&::before {
+				opacity: 0.2;
+			}
+		}
+		&.btn__light {
+			color: rgba($white, 0.50);
+
+			&::before {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&.btn__circle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		background: $white;
+		border: 1px solid $red;
+		border-radius: 50%;
+		cursor: pointer;
+		margin-right: -40px;
+
+		&:hover {
+			border: 1px solid rgba($red, 0.75);
+		}
+	}
+}
